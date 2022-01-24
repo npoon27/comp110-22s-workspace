@@ -41,3 +41,4 @@ elif matching_characters >= 1:
     print(str(matching_characters) + " instances of " + user_character + " found in " + user_word)
 else:
     print("No instances of " + user_character + " found in " + user_word)
+    
