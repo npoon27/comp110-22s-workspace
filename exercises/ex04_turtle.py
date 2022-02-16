@@ -1,4 +1,4 @@
-"""todo."""
+"""EX04 - Turtle - A canvas showing a nice scene of the woods on a sunny day. Break up complex functions-For the draw_tree fuction(now located on lines 76-91) I had far too much going on in the fuction, drawing two shapes in one functions, so I seperated the shapes into a draw_rectangle and a draw_triangle function, allowing me to call back to them for the draw_tree fuction and making it a lot simpler."""
 
 __author__ = "730523706"
 
@@ -15,6 +15,8 @@ def main() -> None:
     draw_sky(initial_tutle, -250, 0, 500, 250)
     draw_sun(initial_tutle, -200, 150, 25)
     draw_cloud(initial_tutle, -100, 150, 300, 15)
+    # Set tracing color back to black
+    initial_tutle.color(0, 0, 0)
     # Start to add in trees to the canvas
     draw_tree(initial_tutle, 30, 40, -185, -76, 100)
     draw_tree(initial_tutle, 35, 55, 113, -120, 160)
@@ -58,7 +60,6 @@ def draw_rectangle(rect: Turtle, x: float, y: float, length: float, width: float
 def draw_grass(grass: Turtle, x: float, y: float, length: float, width: float) -> None:
     """Draw the grass part of the background of the canvas."""
     grass.begin_fill()
-    grass.color(0, 154, 23)
     grass.fillcolor(0, 154, 23)
     draw_rectangle(grass, x, y, length, width)
     grass.end_fill()
@@ -67,7 +68,6 @@ def draw_grass(grass: Turtle, x: float, y: float, length: float, width: float) -
 def draw_sky(sky: Turtle, x: float, y: float, length: float, width: float) -> None:
     """Draw the sky part of the background of the canvas."""
     sky.begin_fill()
-    sky.color(135, 206, 235)
     sky.fillcolor(135, 206, 235)
     draw_rectangle(sky, x, y, length, width)
     sky.end_fill()
@@ -79,12 +79,10 @@ def draw_tree(tree: Turtle, trunk_base: float, trunk_height: float, x: float, y:
     tree.penup()
     tree.pendown()
     tree.begin_fill()
-    tree.color(150, 75, 0)
     tree.fillcolor(150, 75, 0)
     draw_rectangle(tree, x, y, trunk_base, trunk_height)
     tree.end_fill()
     tree.begin_fill()
-    tree.color(45, 90, 39)
     tree.fillcolor(45, 90, 39)
     # Move onto leaves
     start_of_branches_x: float = x - (branches - trunk_base) / 2
@@ -100,14 +98,13 @@ def draw_rock(rock: Turtle, x: float, y: float, base: float, side_one: float, si
     rock.setheading(0.0)
     rock.pendown()
     rock.begin_fill()
-    rock.color(128, 132, 135)
     rock.fillcolor(128, 132, 135)
     i: int = 0
     while i < 6:
         if i == 0 or i == 3:
             rock.forward(base)
             rock.left(45)
-        elif i == 1 or i == 5:
+        elif i == 1 or i == 4:
             rock.forward(side_one)
             rock.left(75)
         else:
@@ -118,7 +115,7 @@ def draw_rock(rock: Turtle, x: float, y: float, base: float, side_one: float, si
 
 
 def draw_sun(sun: Turtle, x: float, y: float, side: float) -> None:
-    """Draw a sun for the background of the canvas with the bottom-left located at x, y."""
+    """Draw a sun for the background of the canvas with the bottom-left located at x, y. Tracing color is changed to yellow."""
     sun.penup()
     sun.goto(x, y)
     sun.setheading(0.0)
@@ -135,7 +132,7 @@ def draw_sun(sun: Turtle, x: float, y: float, side: float) -> None:
 
 
 def draw_cloud(cloud: Turtle, x: float, y: float, base: float, side: float) -> None:
-    """Draw a white cloud that is base long and it's botton-left is located at x, y."""
+    """Draw a white cloud that is base long and it's botton-left is located at x, y. Tracing color is changed to white."""
     cloud.penup()
     cloud.goto(x, y)
     cloud.setheading(0.0)
