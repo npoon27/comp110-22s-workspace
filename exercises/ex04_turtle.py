@@ -1,4 +1,13 @@
-"""EX04 - Turtle - A canvas showing a nice scene of the woods on a sunny day. Break up complex functions-For the draw_tree fuction(now located on lines 76-91) I had far too much going on in the fuction, drawing two shapes in one functions, so I seperated the shapes into a draw_rectangle and a draw_triangle function, allowing me to call back to them for the draw_tree fuction and making it a lot simpler."""
+"""EX04 - Turtle - A canvas showing a nice scene of the woods on a sunny day.
+
+Break up complex functions- For the draw_tree fuction(now located on lines 76-91) I had far too much going on in the fuction,
+drawing two different shapes with two different colors in one function, so I seperated the shapes into a draw_rectangle(42-57) 
+and a draw_triangle function(29-39), allowing me to call back to them for the draw_tree fuction and making it a lot simpler.
+Try something fun!- What I decided to do was to add in a cloud to the sky using a complex shape. I used a while loop with a nested
+if-else statement to be able create a complex shape that was long like a rectangle and had a curved edges appearance(cloud like). 
+I thought that I would add this shape so that the sky didn't look so empty.
+
+"""
 
 __author__ = "730523706"
 
