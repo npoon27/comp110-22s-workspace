@@ -1,4 +1,4 @@
-"""TBD."""
+"""EX05 - `list` Utility Functions - Create new list unility fuctions."""
 
 __author__ = "730523706"
 
@@ -20,12 +20,14 @@ def sub(given_list: list[int], start_index: int, end_index: int) -> list[int]:
         return sublist
     if start_index < 0:
         start_index = 0
-    if end_index > len(given_list) - 1:
-        end_index = len(given_list) - 1
-    while i >= start_index and i < end_index - 1:
-        number: int = given_list[i]
-        sublist.append(number)
+    if end_index > len(given_list):
+        end_index = len(given_list)
+    if i < start_index:
+        i = start_index
+    while i >= start_index and i < end_index:
+        sublist.append(given_list[i])
         i += 1
+    
     return sublist
 
 
