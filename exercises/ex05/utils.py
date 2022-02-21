@@ -27,7 +27,6 @@ def sub(given_list: list[int], start_index: int, end_index: int) -> list[int]:
     while i >= start_index and i < end_index:
         sublist.append(given_list[i])
         i += 1
-    
     return sublist
 
 
