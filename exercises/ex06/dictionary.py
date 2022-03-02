@@ -7,6 +7,8 @@ def invert(given_dict: dict[str, str]) -> dict[str, str]:
     """Given a dictionary invert it so that the new keys are the given values and the new values are the given keys."""
     inverted_dict: dict[str, str] = {}
     for key in given_dict:
+        if given_dict[key] in inverted_dict:
+            raise KeyError
         inverted_dict[given_dict[key]] = key
     return inverted_dict
 
