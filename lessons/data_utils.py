@@ -1,8 +1,5 @@
-"""Dictionary related utility functions."""
+"""Some helpful utility functions for working with CSV files."""
 
-__author__ = "730523706"
-
-# Define your functions below
 from csv import DictReader
 
 
