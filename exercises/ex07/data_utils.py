@@ -42,11 +42,13 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(column_table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
     """Create a comlumn-based table with the first n given rows of data."""
     result: dict[str, list[str]] = {}
+    if n >= len(column_table):
+        return column_table
     for columns in column_table:
         row_values: list[str] = []
         i: int = 0
         while i < n:
-            row_values.append(column_table[columns][n])
+            row_values.append(column_table[columns][i])
             i += 1
         result[columns] = row_values
     return result
